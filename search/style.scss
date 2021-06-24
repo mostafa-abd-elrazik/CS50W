@@ -1,0 +1,150 @@
+body{
+	.navbar {
+		width: 100%;
+		display: block;
+		height: 30px;
+		a{
+		  float: right;
+		  text-align: center;
+		  text-decoration: none;
+		  font-size: 1em;
+		  margin: 7px;
+		  font-size: 14px;
+		}
+	}
+	.navbar {
+		width: 100%;
+		margin-top: 0.5em;
+		display: block;
+	}
+
+    #logo {
+    	margin-left: 25%;
+    	margin-right: 25%;
+    	margin-top: 1em;
+    	margin-bottom: 1em;
+    	position: relative;
+    	display: block;	
+    	text-align: center;
+    	img{
+    		max-height: 92px;
+    	}
+    	}
+	.search-box{
+		background: #fff;
+		display: flex;
+		border: 1px solid #dfe1e5;
+		box-shadow: none;
+		border-radius: 24px;
+		margin-left: 25%;
+		margin-right: 25%;
+		height: 44px;
+		margin: auto;
+		padding:0.2em;
+		min-width:352px ;
+		max-width: 584;
+		width: 50%;
+
+	}
+	#buttons {
+				margin-top: 0.5em;
+				display: block;
+			    text-align: center;
+		
+			}
+           
+    .btn {
+    	background-color: #f8f9fa;
+		border: 1px solid #f8f9fa;
+		border-radius: 2px;
+		color: #3c4043;
+		font-family: arial,sans-serif;
+		font-size: 14px;
+		margin: 11px 4px;
+		padding: 0 16px;
+		line-height: 27px;
+		height: 36px;
+		min-width: 54px;
+		text-align: center;
+		
+	}
+
+	#adv h1 {
+		width: 100% ;
+		font-size: 100%;
+	    margin-top: 70px;
+	    margin-left: 2%;
+	    margin-bottom: 5%;
+	    color: #d93025;
+	    float: left;
+    	}
+    	table{
+    		width: 97%;
+    		font-size: 11px;
+    		text-align: left;
+    		margin-left: 2%;
+    		// border:1px solid;
+    	}
+    	th, td{
+    		// border:1px solid;
+    		min-width: 150px;
+    		padding-left:10px;
+    		input{
+    			width: 97%;
+    			border-radius: 1px;
+				border: 1px solid #d9d9d9;
+			    border-top-color: rgb(217, 217, 217);
+			    border-top-style: solid;
+			    border-top-width: 1px;
+				border-top: 1px solid #c0c0c0;
+				font-size: 13px;
+				height: 25px;
+				padding: 1px 8px;
+    		}
+    	}
+    	.search-box-adv{
+    		min-width:33% ;
+    		width: 66%;
+    		
+    	}
+    	.extras{
+    		width: 33%;
+    		// background-color:gray;
+    	}
+    	#adv_btn{
+    		float: left;
+    		margin: 10px 3%
+    	}
+    	#sub_btn{
+    		background-color:#4d90fe;
+    		box-shadow: none;
+    		border: 1px solid #3079ed;
+			color: #fff;
+			border-radius: 2px;
+			cursor: default;
+			padding: 0 12px;
+			font-size: 11px;
+			font-weight: bold;
+			text-align: center;
+			white-space: nowrap;
+			margin-right: 16px;
+			height: 27px;
+			line-height: 27px;
+			min-width: 54px;
+			outline: 0;
+    	}
+    	@media (max-width:1064px){
+    		table{
+    			width: 80%;
+    			th, td{
+    				padding:5px;
+    			}
+    		}
+
+			.extras{
+				display: none;
+			}
+    	}
+
+	}
+

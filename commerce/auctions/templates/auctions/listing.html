@@ -1,0 +1,87 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+   
+   <h1>Listing : {{listing.title}}</h1>
+   
+   {% if listing.img_url is not None %}
+        <img src="{{listing.img_url}}" >
+    {% endif %}
+
+    <p>{{listing.description}}</p>
+    {% if user == current_bid.winner %}
+        <h1>Congrats, you've won the auction</h1>
+    
+    {% endif %}
+    {% if message %}
+        <h1>Must be highest bid</h1>
+    
+    {% endif %}
+    
+    {% if current_bid  and listing.active == True %}
+        <p>Current Bid : ${{current_bid.current_bid}}</p>
+    {% elif listing.active == True %}
+        <p>Starting Bid : ${{listing.starting_bid}}</p>
+    {% endif %}
+    
+    {% if user == listing.owner and listing.active == True and current_bid %}
+        <a href="{% url 'close_auction' listing.id %}">close auction</a>
+    
+    {% endif %}
+
+    
+
+    {% if user.is_authenticated and listing.active == True %}
+        <div>
+            <form action="{% url 'bid' listing.id %}" method="post">
+                {%csrf_token%}
+                <input type="number" step="0.01" min="0" name="user_bid" >
+                <input type="hidden" name="listing_id" value="{{listing.id}}">
+                <input type="submit" value="submit bid" >
+            </form>            
+        </div>
+
+    {% elif not user.is_authenticated and listing.active == True %}
+    <div>
+        <a href="{% url 'login' %}">login to bid</a>
+    </div>
+    {% else %}
+    <div>
+        <p>Auction ended , final bid was ${{current_bid.current_bid}} </p>
+    </div>
+    
+    {% endif %}
+    
+    <h2>Details</h2>
+    <p>Listd by : {{listing.owner}}</p>
+    <p>Category : <a href="{% url 'category' listing.get_category_display %}">{{listing.get_category_display}}</a>
+    </p>
+    
+    {% if user.is_authenticated and listing.active == True %}
+    <a href="{% url 'add' listing.id  %}">add to watchlist</a>
+    {% endif %}
+    
+    <h2>Comments Section</h2>
+    {% if user.is_authenticated %}
+    <p>add a Comment</p>
+        <form action="{% url 'comment' listing.id %}" method="post">
+        {%csrf_token%}
+        <input type="text" name="content" >
+        <input type="hidden" name="user_id" value="{{user.id}}">
+        <input type="hidden" name="listing_id" value="{{listing.id}}">
+        <input type="submit" >
+     </form>
+      {% else %}
+    <a href="{% url 'login' %}">login to comment</a>
+    {% endif%}
+    
+    {% for comment in comments %}
+    <div>
+        <h2>{{comment.customer}}</h2>
+        <p>{{comment.content}}</p>
+    </div>
+
+    {% empty%}
+        <h1>No Comments</h1>
+        {% endfor %}
+{% endblock %}

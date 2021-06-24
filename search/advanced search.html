@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>advanced search</title>
+<!--         <link rel="stylesheet" type="text/css" href="bootstrap.css">
+ -->        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="navbar">
+              <a href="search.html">Google Search</a> 
+        </div>
+
+    	<div class="search-area">
+    		<div id="adv">
+    		    <h1>Avanced search</h1>
+            </div>
+	        <form id="advanced" action="https://www.google.com/search">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Find pages with...</th>
+                        <th class="search-box-adv"></th>
+                        <th class="extras">To do this in the search box.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>all these words:</td>
+                        <td class="search-box-adv"><input   type="text" name="as_q"></td>
+                        <td class="extras">Type the important words: tri-colour rat terrier</td>
+                    </tr>
+                    <tr>
+                        <td>this exact word or phrase:</td>
+                        <td class="search-box-adv"><input type="text" name="as_epq"></td>
+                        <td class="extras"> Put exact words in quotes: "rat terrier"</td>
+                    </tr>
+                    <tr>
+                        <td>any of these words:</td>
+                        <td class="search-box-adv"><input type="text" name="as_oq"></td>
+                        <td class="extras"> Type OR between all the words you want: miniature OR standard</td>
+                    </tr>
+                    <tr>
+                        <td>none of these words:</td>
+                        <td class="search-box-adv"><input type="text" name="as_eq"></td>
+                        <td class="extras">Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="adv_btn" >
+	        		<input   id="sub_btn" type="submit" value="advanced Search">
+	        </div>
+	        </form>
+    	</div>
+    	
+    </body>
+</html>

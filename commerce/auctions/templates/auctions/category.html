@@ -1,0 +1,21 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for listing in listings %}
+        {% if listing.active == True %}
+            <div>
+            	<a href="{% url 'listings' listing.id %}">
+            		{% if listing.img_url is not None %}
+            	<img src="{{listing.img_url}}" alt="{{listing.description}}">
+            	{% endif%}
+            	<h2>{{listing.title}}</h2>
+            	</a>
+            	
+            </div>
+        {% endif %}
+    {% empty%}
+    	<h1>No active listings</h1>
+    {% endfor %}
+{% endblock %}
